@@ -1,12 +1,9 @@
 #files to ignore
 
-*.metadata/**
-*.recommenders/**
-*target/**
-*build/**
+**.metadata/**
+**.recommenders/**
+target
+**build/**
 *.idea/**
-*data.sqlite
 *.iml
-
-#*.class
-/target/
+dist/*

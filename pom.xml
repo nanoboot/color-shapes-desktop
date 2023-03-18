@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- color-shapes: A logic game based on Color linez game.
+ color-shapes-desktop: The desktop UI for on Color Lines Engine.
  Copyright (C) 2016-2022 the original author or authors.
 
  This program is free software; you can redistribute it and/or
@@ -22,28 +22,44 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.nanoboot.essential</groupId>
+        <artifactId>nanoboot-parent</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
     <groupId>org.nanoboot.colorshapes</groupId>
     <artifactId>color-shapes-desktop</artifactId>
-    <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <version>2.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>Color Shapes Desktop</name>
-    <description>A logic game based on Color linez game</description>
+    <description>Desktop - Logic game based on Color linez game</description>
 
+    <modules>
+        <!-- fx impl -->
+        <module>color-shapes-desktop-localisation-impl</module>
+        <module>color-shapes-desktop-view</module>
+        <module>color-shapes-desktop-window</module>
+<!--        <module>color-shapes-desktop-playersettingwindow</module>-->
+        <module>color-shapes-desktop-appimplfx</module>
+
+    </modules>
     <properties>
-        <javase.version>8</javase.version>
+        <power.version>2.0.0-SNAPSHOT</power.version>
+        <color-shapes-engine.version>2.0.0-SNAPSHOT</color-shapes-engine.version>
+        <color-shapes-desktop.version>2.0.0-SNAPSHOT</color-shapes-desktop.version>
+        <checkstyle.skip>true</checkstyle.skip>
     </properties>
-
     <build>
 
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.nanoboot.colorshapes.desktop.ColorShapes</mainClass>
+                            <mainClass>org.nanoboot.colorshapes.desktop.appimplfx.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -63,35 +79,91 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>${javase.version}</source>
-                    <target>${javase.version}</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <skip>${checkstyle.skip}</skip>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-    
     <dependencies>
         <!-- Power dependencies -->
         <dependency>
             <groupId>org.nanoboot.powerframework</groupId>
-            <artifactId>power-framework</artifactId>
-            <version>1.0.0</version>
+            <artifactId>power-core</artifactId>
+            <version>${power.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nanoboot.powerframework</groupId>
+            <artifactId>power-random</artifactId>
+            <version>${power.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nanoboot.powerframework</groupId>
+            <artifactId>power-utils</artifactId>
+            <version>${power.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nanoboot.powerframework</groupId>
+            <artifactId>power-collections</artifactId>
+            <version>${power.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nanoboot.powerframework</groupId>
+            <artifactId>power-json</artifactId>
+            <version>${power.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nanoboot.powerframework</groupId>
+            <artifactId>power-view</artifactId>
+            <version>${power.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nanoboot.powerframework</groupId>
+            <artifactId>power-time</artifactId>
+            <version>${power.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nanoboot.powerframework</groupId>
+            <artifactId>power-db</artifactId>
+            <version>${power.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nanoboot.powerframework</groupId>
+            <artifactId>power-log</artifactId>
+            <version>${power.version}</version>
         </dependency>
 
         <!-- Other dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit4.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
-            <version>3.39.3.0</version>
+            <version>${sqlite-jdbc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <version>${lombok.version}</version>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>
- 

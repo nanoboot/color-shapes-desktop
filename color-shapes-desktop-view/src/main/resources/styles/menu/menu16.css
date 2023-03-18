@@ -1,0 +1,12 @@
+.menu-item {
+    -fx-background-color: rgb(108, 119, 46);
+}
+
+.menu:hover,
+.menu:showing,
+.menu-item:hover,
+.menu:expanded,
+.menu-item .label:showing,
+.menu-item:focused {
+    -fx-background-color: rgb(75, 83, 32);
+}
