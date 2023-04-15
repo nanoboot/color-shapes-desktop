@@ -17,19 +17,15 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
-
-package org.nanoboot.colorshapes.desktop.appimplfx;
-
-import org.nanoboot.colorshapes.engine.infrastructure.Engine;
 /**
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class Main {
-    public static void main(String[] args) {
-        Engine engine = new Engine();
-        CSApplication csApplication = new CSApplicationImpl(engine);
-        csApplication.run();
-        System.exit(0);
-    }
+module colorshapes.desktop.app {
+    exports org.nanoboot.colorshapes.desktop.app;
+    requires lombok;
+    requires colorshapes.desktop.view;
+    requires colorshapes.engine.infrastructure;
+    requires powerframework.time;
+    requires powerframework.view;
 }

@@ -18,7 +18,7 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-package org.nanoboot.colorshapes.desktop.appimplfx;
+package org.nanoboot.colorshapes.desktop.app;
 
 import org.nanoboot.colorshapes.desktop.view.ColorShapesDesktopRunner;
 import org.nanoboot.colorshapes.engine.infrastructure.Engine;

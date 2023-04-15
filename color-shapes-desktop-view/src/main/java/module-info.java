@@ -33,7 +33,6 @@ module colorshapes.desktop.view {
     requires java.logging;
     requires powerframework.collections;
     requires powerframework.utils;
-    requires colorshapes.engine.core;
     requires colorshapes.engine.game;
     requires colorshapes.engine.localisation.api;
     requires colorshapes.engine.flow;

@@ -31,12 +31,12 @@ module colorshapes.desktop.window {
     requires java.logging;
     requires powerframework.collections;
     requires powerframework.utils;
-    requires colorshapes.engine.core;
     requires powerframework.time;
     requires powerframework.db;
     requires powerframework.random;
     requires colorshapes.engine.localisation.api;
     requires colorshapes.engine.persistence.api;
     requires colorshapes.engine.services;
+    requires colorshapes.engine.entity;
     requires colorshapes.desktop.localisation.impl;
 }

@@ -42,7 +42,7 @@
         <module>color-shapes-desktop-view</module>
         <module>color-shapes-desktop-window</module>
 <!--        <module>color-shapes-desktop-playersettingwindow</module>-->
-        <module>color-shapes-desktop-appimplfx</module>
+        <module>color-shapes-desktop-app</module>
 
     </modules>
     <properties>

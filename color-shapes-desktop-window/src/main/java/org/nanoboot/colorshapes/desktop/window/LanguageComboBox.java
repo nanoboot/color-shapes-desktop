@@ -21,7 +21,7 @@
 package org.nanoboot.colorshapes.desktop.window;
 
 import org.nanoboot.colorshapes.desktop.localisation.LocalisationServiceImpl;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.localisation.api.LocalisationService;
 import org.nanoboot.colorshapes.engine.localisation.api.ResourcePack;
 import org.nanoboot.colorshapes.engine.services.api.RepositoryService;

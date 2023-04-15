@@ -28,11 +28,11 @@
         <version>2.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>color-shapes-desktop-appimplfx</artifactId>
+    <artifactId>color-shapes-desktop-app</artifactId>
     <packaging>jar</packaging>
 
-    <name>CS Desktop App fx</name>
-    <description>FX app for Color Shapes</description>
+    <name>CS Desktop App</name>
+    <description>App for Color Shapes</description>
 
     <dependencies>
         <!-- Power dependencies -->
